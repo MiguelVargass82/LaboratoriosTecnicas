@@ -4,6 +4,9 @@
  */
 package lab3main;
 
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author migue
@@ -15,6 +18,14 @@ public class MainFrame extends javax.swing.JFrame {
      */
     public MainFrame() {
         initComponents();
+        ArrayList<Product> tableBaseList = new ArrayList();
+        tableBaseList.add(new Product("product1",0,0));
+        tableBaseList.add(new Product("product2",0,0));
+        tableBaseList.add(new Product("product3",0,0));
+        tableBaseList.add(new Product("product4",0,0));
+        tableBaseList.add(new Product("product5",0,0));
+        DefaultTableModel model = new DefaultTableModel();
+        System.out.println(tableBaseList.get(0).getName());
     }
   
     
