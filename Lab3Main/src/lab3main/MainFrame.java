@@ -5,13 +5,18 @@
 package lab3main;
 
 import java.util.ArrayList;
+import java.util.List;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
+import javax.swing.RowFilter;
 
 /**
  *
  * @author migue
  */
 public class MainFrame extends javax.swing.JFrame {
+    
+   
 
     /**
      * Creates new form MainFrame
@@ -25,7 +30,7 @@ public class MainFrame extends javax.swing.JFrame {
         tableBaseList.add(new Product("product4",0,0));
         tableBaseList.add(new Product("product5",0,0));
         DefaultTableModel model = new DefaultTableModel();
-        System.out.println(tableBaseList.get(0).getName());
+        System.out.println(tableBaseList.get(0).getItemName());
     }
   
     

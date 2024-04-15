@@ -1,24 +1,24 @@
 package lab3main;
 
 public class Product {
-    private String name;
+    private String itemName;
     private int price;
     private int amount;
    
     
-    public Product(String name, int price,int amount){
-    this.name = name;
+    public Product(String itemName, int price,int amount){
+    this.itemName = itemName;
     this.price=price;
     this.amount=amount;
     }
     
     
-    public String getName() {
-        return name;
+    public String getItemName() {
+        return itemName;
     }
  
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String itemName) {
+        this.itemName = itemName;
     }
     
     public int getPrice() {
