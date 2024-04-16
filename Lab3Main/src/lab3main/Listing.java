@@ -37,6 +37,7 @@ public class Listing {
    
     //Modify the model table with de ArrayList 
     public void updateModelList (DefaultTableModel modelTable, ArrayList<Product> products){
+         modelTable.setRowCount(0);
         for(Product product: products){
                 modelTable.addRow(new Object[]{product.getItemName(),product.getPrice(),product.getAmount()     });
        }                  
