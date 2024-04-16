@@ -1,12 +1,12 @@
 package lab3main;
 
 import java.util.ArrayList;
-import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author ASUS
+ * @author Brayan Santiago Ramirez Silva
+ *         Miguel Pacheco
  */
 public class Listing {
 
@@ -68,13 +68,6 @@ public class Listing {
         updateModelList(tableModel,products);
     }
 
-    public Product searchProduct(String itemName) {
-        for (Product product : getProducts()) {
-            if (product.getItemName().equals(itemName)) {
-                return product;
-            }
-        }
-        return null;
-    }
+    
 
 }

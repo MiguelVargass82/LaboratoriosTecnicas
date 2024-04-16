@@ -1,7 +1,6 @@
 package lab3main;
 
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
 
 public class Utilities {
     
@@ -9,10 +8,10 @@ public class Utilities {
                boolean flat = true;
         try {   
             int number = Integer.parseInt(text);        
-            if(number<0 ){ //Range validation      
+            if(number<0 ){     
             flat=false;
             }                           
-        } catch (NumberFormatException ex) {    //Cant be a integer  
+        } catch (NumberFormatException ex) {     
             flat = false;
         }
         return flat;
