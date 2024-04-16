@@ -1,53 +1,79 @@
-
 package lab3main;
+
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author ASUS
  */
 public class Listing {
-    private List<Product> product;
 
-    public Listing() {
-        product = new ArrayList<>();
+    private ArrayList<Product> products;
+    private DefaultTableModel tableModel;
+
+    
+    
+     public Listing() {
+        products = new ArrayList<>();
+        tableModel = new DefaultTableModel();
     }
 
+    
+    public DefaultTableModel getTableModel() {
+        return tableModel;
+    }
+     
+    public ArrayList<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(ArrayList<Product> products) {
+        this.products = products;
+    }
+
+      
+   
+    //Modify the model table with de ArrayList 
+    public void updateModelList (DefaultTableModel modelTable, ArrayList<Product> products){
+        for(Product product: products){
+                modelTable.addRow(new Object[]{product.getItemName(),product.getPrice(),product.getAmount()     });
+       }                  
+    }
+        
     public void addProduct(Product product) {
-        this.product.add(product);
+        this.getProducts().add(product);
+        updateModelList(tableModel,products);
     }
 
     public void updateProduct(String itemName, double price, int amount) {
-        for (Product product : product) {
+        for (Product product : getProducts()) {
             if (product.getItemName().equals(itemName)) {
                 product.setPrice((int) price);
                 product.setAmount(amount);
                 return;
             }
         }
-        
     }
 
     public void deleteProduct(String itemName) {
-        for (Product product : product) {
+        for (Product product : getProducts()) {
             if (product.getItemName().equals(itemName)) {
-                this.product.remove(product);
+                this.getProducts().remove(product);
                 return;
             }
         }
-        
+        updateModelList(tableModel,products);
     }
 
     public Product searchProduct(String itemName) {
-        for (Product product  : product) {
+        for (Product product : getProducts()) {
             if (product.getItemName().equals(itemName)) {
                 return product;
             }
         }
-        return null; 
+        return null;
     }
 
-    
-    
 }
