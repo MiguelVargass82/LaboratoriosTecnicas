@@ -273,7 +273,7 @@ public class MainFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Please enter a valid number in the price field", "Información", JOptionPane.INFORMATION_MESSAGE);
         } else if (!Utilities.typeValidation(amount)) {
             JOptionPane.showMessageDialog(null, "Please enter a valid number in the amount field", "Información", JOptionPane.INFORMATION_MESSAGE);
-        } else if (Utilities.containtInInventory(itemName, modelList.getProducts())) {
+        } else if (Utilities.containtInInventory(itemName.toLowerCase(), modelList.getProducts())) {
 
             int numberPrice = Integer.parseInt(price);
             int numberAmount = Integer.parseInt(amount);
@@ -349,7 +349,7 @@ public class MainFrame extends javax.swing.JFrame {
                 newNameTf.setText("");
                 newPriceTf.setText("");
                 newAmountTf.setText("");
-            } else if (!Utilities.containtInInventory(newName, modelList.getProducts())) {
+            } else if (!Utilities.containtInInventory(newName.toLowerCase(), modelList.getProducts())) {
                 JOptionPane.showMessageDialog(null, "This product is already in inventory  ", "Información", JOptionPane.INFORMATION_MESSAGE);
 
             }
