@@ -139,7 +139,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel8.setText("Filtrar:");
+        jLabel8.setText("Filter:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -203,7 +203,7 @@ public class MainFrame extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(searchTf, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
@@ -260,6 +260,8 @@ public class MainFrame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jLabel8.getAccessibleContext().setAccessibleName("Filter");
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -273,7 +275,7 @@ public class MainFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Please enter a valid number in the price field", "Información", JOptionPane.INFORMATION_MESSAGE);
         } else if (!Utilities.typeValidation(amount)) {
             JOptionPane.showMessageDialog(null, "Please enter a valid number in the amount field", "Información", JOptionPane.INFORMATION_MESSAGE);
-        } else if (Utilities.containtInInventory(itemName.toLowerCase(), modelList.getProducts())) {
+        } else if (Utilities.containtInInventory(itemName.toLowerCase().trim(), modelList.getProducts())) {
 
             int numberPrice = Integer.parseInt(price);
             int numberAmount = Integer.parseInt(amount);
@@ -340,7 +342,7 @@ public class MainFrame extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Please enter a valid number in the price field", "Información", JOptionPane.INFORMATION_MESSAGE);
             } else if (!Utilities.typeValidation(newAmount)) {
                 JOptionPane.showMessageDialog(null, "Please enter a valid number in the amount field", "Información", JOptionPane.INFORMATION_MESSAGE);
-            } else if (Utilities.containtInInventory(newName, modelList.getProducts()) || (newName.equals(auxProduct.getItemName()))) {
+            } else if (Utilities.containtInInventory(newName.toLowerCase().trim(), modelList.getProducts()) || (newName.equals(auxProduct.getItemName()))) {
                 auxProduct.setName(newName);
                 auxProduct.setPrice(Integer.parseInt(newPrice));
                 auxProduct.setAmount(Integer.parseInt(newAmount));
@@ -349,7 +351,7 @@ public class MainFrame extends javax.swing.JFrame {
                 newNameTf.setText("");
                 newPriceTf.setText("");
                 newAmountTf.setText("");
-            } else if (!Utilities.containtInInventory(newName.toLowerCase(), modelList.getProducts())) {
+            } else if (!Utilities.containtInInventory(newName.toLowerCase().trim(), modelList.getProducts())) {
                 JOptionPane.showMessageDialog(null, "This product is already in inventory  ", "Información", JOptionPane.INFORMATION_MESSAGE);
 
             }
