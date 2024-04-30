@@ -12,7 +12,7 @@ import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Brayan Santiago Ramirez Silva
- *         Miguel Pacheco
+ *         Miguel Jose Vargas Pacheco
  */
 public class Listing {
 
