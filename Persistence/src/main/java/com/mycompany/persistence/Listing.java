@@ -82,7 +82,7 @@ public class Listing {
 
         try (FileWriter fileWriter = new FileWriter("ProductsListing.json")){
             fileWriter.write(json);
-            System.out.println("Succesfully save: Product list");
+            System.out.println("Succesfully save: Product list ");
         }catch (IOException e){
             System.err.println("Error saving product list to JSON: " + e.getMessage());
         }
